@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 
 namespace minecraft_windows_service_wrapper
 {
@@ -56,6 +57,11 @@ namespace minecraft_windows_service_wrapper
                 WindowStyle = ProcessWindowStyle.Hidden,
                 WorkingDirectory = opts.WorldDirectory
             };
+            if (opts.Port != null)
+            {
+                processStartInfo.ArgumentList.Add("--port");
+                processStartInfo.ArgumentList.Add(opts.Port.Value.ToString());
+            }
             process = Process.Start(processStartInfo);
             outReader = StartReader(process.StandardOutput);
             errReader = StartReader(process.StandardError, isError: true);
