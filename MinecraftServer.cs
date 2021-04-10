@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace windows_service_wrapper
+namespace minecraft_windows_service_wrapper
 {
     public class MinecraftServer : BackgroundService
     {

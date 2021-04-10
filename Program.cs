@@ -1,12 +1,11 @@
-﻿using System;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging.EventLog;
 using Microsoft.Extensions.Logging;
 using CommandLine;
 using System.Threading.Tasks;
 
-namespace windows_service_wrapper
+namespace minecraft_windows_service_wrapper
 {
     class Program
     {

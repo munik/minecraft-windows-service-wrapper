@@ -1,6 +1,6 @@
 using CommandLine;
 
-namespace windows_service_wrapper
+namespace minecraft_windows_service_wrapper
 {
     public class CommandLineOptions
     {
