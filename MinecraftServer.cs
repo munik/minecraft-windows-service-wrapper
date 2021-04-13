@@ -104,8 +104,12 @@ namespace minecraft_windows_service_wrapper
 
         private IEnumerable<string> GetJavaVersion8Args(CommandLineOptions opts, string serverJar)
         {
-            yield return "-Xms3G";
             yield return "-Xmx8G";
+            // All these options are recommended for running the Pixelmon mod,
+            // which is the only server I run that requires Java 8. I didn't
+            // check whether they're valid for Java >8 so I only use them for
+            // Java 8. (Also, Pixelmon recommends minimum RAM of 3G.)
+            yield return "-Xms3G";
             yield return "-XX:+UseG1GC";
             yield return "-XX:+UnlockExperimentalVMOptions";
             yield return "-XX:MaxGCPauseMillis=100";
@@ -123,8 +127,8 @@ namespace minecraft_windows_service_wrapper
 
         private IEnumerable<string> GetJavaVersion15Args(CommandLineOptions opts, string serverJar)
         {
-            yield return "-Xms2G";
             yield return "-Xmx8G";
+            yield return "-Xms2G";
             yield return "-jar";
             yield return serverJar;
             foreach (var arg in GetMinecraftArgs(opts))
@@ -137,12 +141,18 @@ namespace minecraft_windows_service_wrapper
             {
                 yield return "nogui";
                 yield return "--port";
+                // Port defaults to -1, which we go ahead and pass through,
+                // which results in using the default Minecraft server port of
+                // 25565.
                 yield return opts.Port.ToString();
             }
             else if (opts.MinecraftVersion.Minor >= 16)
             {
                 yield return "--nogui";
                 yield return "--port";
+                // Port defaults to -1, which we go ahead and pass through,
+                // which results in using the default Minecraft server port of
+                // 25565.
                 yield return opts.Port.ToString();
             }
             else

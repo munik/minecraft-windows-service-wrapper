@@ -2,6 +2,7 @@ Minecraft Windows Service Wrapper
 ===
 
 A Windows service wrapper for Minecraft Java Edition.
+Launches java.exe for a Minecraft server, relays standard output and standard error into .NET logging infra, and issues `save-all` and `stop` when service shuts down.
 
 Tested support for Minecraft 1.16 and 1.12.
 Possibly supports other versions but not tested.
