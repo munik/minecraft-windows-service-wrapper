@@ -22,8 +22,8 @@ Possibly supports other versions but not tested.
 3. Once you've tested that it runs correctly, you'll need to install the service into Windows:
     - Run the following command:  
         `sc create "Your Minecraft Windows Service Name" binpath="THE COMMAND LINE YOU USED ABOVE" start= auto`  
-        You will need to escape any quotes in the command you provide to binpath.
-        (It looks like there's typo in that `start=` and `auto` are separated by a space, but that is in fact correct.)
+        You will need to escape any quotes in the command you provide to binpath.  
+        Also, it looks like there's typo in that `start=` and `auto` are separated by a space, but that is in fact correct.
         If you don't want it to autostart, just remove the `start= auto`
     - Start the service!
 
