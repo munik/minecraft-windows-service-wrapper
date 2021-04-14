@@ -23,7 +23,7 @@ Possibly supports other versions but not tested.
     - Run the following command:  
         `sc create "Your Minecraft Windows Service Name" binpath="THE COMMAND LINE YOU USED ABOVE" start= auto`  
         You will need to escape any quotes in the command you provide to binpath.  
-        Also, it looks like there's typo in that `start=` and `auto` are separated by a space, but that is in fact correct.
+        Also, it looks like there's a typo in that `start=` and `auto` are separated by a space, but that is in fact correct.
         If you don't want it to autostart, just remove the `start= auto`
     - Start the service!
 
